@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raluca's Dialog"
+        android:ems="15"
+        android:layout_marginTop="5dp"
+        android:id="@+id/ralucadialog_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mihai's dialog"
+        android:id="@+id/mihaidialog_button"
+        android:layout_below="@+id/ralucadialog_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ralucadialog_button"
+        android:layout_alignRight="@+id/ralucadialog_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calin's dialog"
+        android:id="@+id/calindialog_button"
+        android:layout_below="@+id/mihaidialog_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ralucadialog_button"
+        android:layout_alignRight="@+id/ralucadialog_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="carla's dialog"
+        android:id="@+id/carladialog_button"
+        android:layout_below="@+id/calindialog_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ralucadialog_button"
+        android:layout_alignRight="@+id/ralucadialog_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gabi's dialog"
+        android:id="@+id/gabidialog_button"
+        android:layout_below="@+id/carladialog_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ralucadialog_button"
+        android:layout_alignRight="@+id/ralucadialog_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teo's dialog"
+        android:id="@+id/teodialog_button"
+        android:layout_below="@+id/gabidialog_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ralucadialog_button"
+        android:layout_alignRight="@+id/ralucadialog_button"/>
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Catalin's dialog"
+    android:id="@+id/catalindialog_button"
+    android:layout_below="@+id/teodialog_button"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignEnd="@+id/ralucadialog_button"
+    android:layout_alignRight="@+id/ralucadialog_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rares's dialog"
+        android:id="@+id/raresdialog_button"
+        android:layout_below="@+id/catalindialog_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ralucadialog_button"
+        android:layout_alignRight="@+id/ralucadialog_button"/>
+
+</RelativeLayout>
