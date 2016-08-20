@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Playground</string>
-    <string name="dialogs">Dialogs</string>
+    <string name="app_name">ButtonsAndDialogs</string>
 </resources>

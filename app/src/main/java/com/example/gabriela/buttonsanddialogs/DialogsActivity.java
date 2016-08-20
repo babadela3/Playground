@@ -1,4 +1,4 @@
-package com.example.cretucalinn.playground;
+package com.example.gabriela.buttonsanddialogs;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -10,21 +10,39 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Cretu Calinn on 8/18/2016.
+ * Created by Gabriela on 8/20/2016.
  */
 public class DialogsActivity extends Activity {
+    private Button ralucaDialogButton;
+    private Button calinDialogButton;
     private int progressStatus = 0;
     private Handler handler = new Handler();
-    private Button buttonCretuCalin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialogs);
 
-        buttonCretuCalin= (Button) findViewById(R.id.buttonCretuCalin);
-        buttonCretuCalin.setOnClickListener(new View.OnClickListener() {
+        ralucaDialogButton = (Button) findViewById(R.id.ralucadialog_button);
+        calinDialogButton = (Button) findViewById(R.id.calindialog_button);
+
+        setUpHandlers();
+    }
+
+    private void setUpHandlers(){
+        //aici adaugati handlerele pentru fiecare buton
+        ralucaDialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //handler :D
+            }
+        });
+
+        calinDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
                 final ProgressDialog pd = new ProgressDialog(DialogsActivity.this);
 
                 // Set progress dialog style spinner

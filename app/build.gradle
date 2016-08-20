@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "com.example.cretucalinn.playground"
+        applicationId "com.example.gabriela.buttonsanddialogs"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
