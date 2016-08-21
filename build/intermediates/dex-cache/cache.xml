@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\usseerr\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_dde90d47a4293556351893405b942c1219ca05c5.jar" />
+    </item>
+    <item
+        jar="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_2b51ea2d7cc594f3a32058cc8065134be2a2b000.jar" />
+    </item>
+    <item
+        jar="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="2bd4dab6df9f2d35abd8ac4c0b0573d5299f604b">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\instant-run_51e43ca86b35556a3e4ee2b6746e1111455730e8.jar" />
+    </item>
+    <item
+        jar="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.4.0_dae1d44a7e9f2eace054902bbf8c0fa9e1a0f0cd.jar" />
+    </item>
+    <item
+        jar="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="2125ba010f425b790fef98952c5855ce8dcbcb31">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_68766bfdbacee01d6d0d2da26bd1a3edfe962bb7.jar" />
+    </item>
+    <item
+        jar="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.4.0_50ee780f535e002df4296ba750e86b89d0bf4e6c.jar" />
+    </item>
+    <item
+        jar="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_921bb3ccd949400c563b79aa73421fa5479e92ae.jar" />
+    </item>
+    <item
+        jar="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\usseerr\Desktop\Playground\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_7a8171c34b958a598b9d201fbad5dbb3338306f5.jar" />
+    </item>
+
+</items>
