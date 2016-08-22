@@ -21,7 +21,7 @@ import android.widget.Toast;
  * Created by Gabriela on 8/20/2016.
  */
 public class DialogsActivity extends Activity {
-    Button ralucaDialogButton;
+    private Button ralucaDialogButton;
     private Button calinDialogButton;
     private Button teoDialogButton;
     private Button mihaiDialogButton;
@@ -37,6 +37,7 @@ public class DialogsActivity extends Activity {
         ralucaDialogButton = (Button) findViewById(R.id.ralucadialog_button);
         calinDialogButton = (Button) findViewById(R.id.calindialog_button);
         mihaiDialogButton = (Button) findViewById(R.id.mihaidialog_button);
+        teoDialogButton = (Button) findViewById(R.id.teodialog_button);
         setUpHandlers();
     }
 
@@ -46,6 +47,24 @@ public class DialogsActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //handler :D
+		        AlertDialog.Builder dialog = new AlertDialog.Builder(DialogsActivity.this);
+
+                dialog.setMessage("Are you sure you want to make this decision?");
+                dialog.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(DialogsActivity.this, "Cool", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+
+                            }
+                        });
+                dialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(DialogsActivity.this, "You chose to cancel!", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        });
+                dialog.setIcon(android.R.drawable.ic_dialog_alert);
+                dialog.show();
             }
         });
 
@@ -121,7 +140,6 @@ public class DialogsActivity extends Activity {
                 Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 50, 50, true));
 
 
-
                 // set title
                 alertDialogBuilder.setTitle("Therms of Service")
                         .setIcon(d);
@@ -130,13 +148,13 @@ public class DialogsActivity extends Activity {
                 alertDialogBuilder
                         .setMessage("Do you accept all our terms and conditions?")
                         .setCancelable(false)
-                        .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
 
-                                Toast.makeText(DialogsActivity.this,"Yes",Toast.LENGTH_LONG).show();
+                                Toast.makeText(DialogsActivity.this, "Yes", Toast.LENGTH_LONG).show();
                             }
                         })
-                        .setNeutralButton("Cancel",new DialogInterface.OnClickListener() {
+                        .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int id) {
                                         dialog.cancel();
@@ -144,10 +162,10 @@ public class DialogsActivity extends Activity {
                                 }
 
                         )
-                        .setNegativeButton("No",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
 
-                                Toast.makeText(DialogsActivity.this,"No",Toast.LENGTH_LONG).show();
+                                Toast.makeText(DialogsActivity.this, "No", Toast.LENGTH_LONG).show();
                             }
                         });
 
@@ -156,6 +174,8 @@ public class DialogsActivity extends Activity {
 
                 // show it
                 alertDialog.show();
+            }
+        });
 
         mihaiDialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
