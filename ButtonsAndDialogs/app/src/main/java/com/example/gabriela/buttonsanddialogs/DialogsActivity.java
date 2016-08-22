@@ -1,13 +1,20 @@
 package com.example.gabriela.buttonsanddialogs;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Created by Gabriela on 8/20/2016.
@@ -15,6 +22,7 @@ import android.widget.Button;
 public class DialogsActivity extends Activity {
     Button ralucaDialogButton;
     private Button calinDialogButton;
+    private Button teoDialogButton;
     private int progressStatus = 0;
     private Handler handler = new Handler();
 
@@ -25,6 +33,7 @@ public class DialogsActivity extends Activity {
 
         ralucaDialogButton = (Button) findViewById(R.id.ralucadialog_button);
         calinDialogButton = (Button) findViewById(R.id.calindialog_button);
+        teoDialogButton = (Button) findViewById(R.id.teodialog_button);
         setUpHandlers();
     }
 
@@ -93,6 +102,57 @@ public class DialogsActivity extends Activity {
                         }
                     }
                 }).start(); // Start the operation
+            }
+        });
+
+        teoDialogButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(DialogsActivity.this);
+
+
+                Drawable dr = ResourcesCompat.getDrawable(getResources(), R.drawable.termsofservice, null);
+                Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
+                Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 50, 50, true));
+
+
+
+                // set title
+                alertDialogBuilder.setTitle("Therms of Service")
+                        .setIcon(d);
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Do you accept all our terms and conditions?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+
+                                Toast.makeText(DialogsActivity.this,"Yes",Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .setNeutralButton("Cancel",new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                }
+
+                        )
+                        .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+
+                                Toast.makeText(DialogsActivity.this,"No",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
             }
         });
     }
