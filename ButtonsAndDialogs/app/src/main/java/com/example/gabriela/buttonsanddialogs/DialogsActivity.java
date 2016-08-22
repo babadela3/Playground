@@ -2,6 +2,7 @@ package com.example.gabriela.buttonsanddialogs;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -23,6 +24,8 @@ public class DialogsActivity extends Activity {
     Button ralucaDialogButton;
     private Button calinDialogButton;
     private Button teoDialogButton;
+    private Button mihaiDialogButton;
+
     private int progressStatus = 0;
     private Handler handler = new Handler();
 
@@ -33,7 +36,7 @@ public class DialogsActivity extends Activity {
 
         ralucaDialogButton = (Button) findViewById(R.id.ralucadialog_button);
         calinDialogButton = (Button) findViewById(R.id.calindialog_button);
-        teoDialogButton = (Button) findViewById(R.id.teodialog_button);
+        mihaiDialogButton = (Button) findViewById(R.id.mihaidialog_button);
         setUpHandlers();
     }
 
@@ -153,6 +156,31 @@ public class DialogsActivity extends Activity {
 
                 // show it
                 alertDialog.show();
+
+        mihaiDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(DialogsActivity.this);
+                dialog.setContentView(R.layout.mihai_dialog_layout);
+                dialog.setTitle("Add child");
+
+                Button saveButton = (Button) dialog.findViewById(R.id.saveButton);
+                Button cancelButton = (Button) dialog.findViewById(R.id.cancelButton);
+
+                saveButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                cancelButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
     }
