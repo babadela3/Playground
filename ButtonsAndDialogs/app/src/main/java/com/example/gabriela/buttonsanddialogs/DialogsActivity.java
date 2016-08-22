@@ -11,12 +11,30 @@ import android.widget.Button;
 public class DialogsActivity extends Activity {
     Button ralucaDialogButton;
 
+    public void raresDialog(View view) {
+
+        final CharSequence[] options = {
+                "Mancare", "Bautura", "Ambele :)"
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Alege");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                // Do something with the selection
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialogs);
 
         ralucaDialogButton = (Button) findViewById(R.id.ralucadialog_button);
+        raresDialogButton = (Button) findViewById(R.id.raresdialog_button);
 
         setUpHandlers();
     }
