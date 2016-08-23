@@ -25,6 +25,7 @@ public class DialogsActivity extends Activity {
     private Button calinDialogButton;
     private Button teoDialogButton;
     private Button mihaiDialogButton;
+    private Button gabiDialogButton;
 
     private int progressStatus = 0;
     private Handler handler = new Handler();
@@ -38,6 +39,7 @@ public class DialogsActivity extends Activity {
         calinDialogButton = (Button) findViewById(R.id.calindialog_button);
         mihaiDialogButton = (Button) findViewById(R.id.mihaidialog_button);
         teoDialogButton = (Button) findViewById(R.id.teodialog_button);
+        gabiDialogButton = (Button) findViewById(R.id.gabidialog_button);
         setUpHandlers();
     }
 
@@ -201,6 +203,50 @@ public class DialogsActivity extends Activity {
                     }
                 });
                 dialog.show();
+            }
+        });
+
+        gabiDialogButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progress = new ProgressDialog(DialogsActivity.this);
+                progress.setTitle("Super cool title");
+                progress.setMessage("Loading...");
+                progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progress.setIndeterminate(true);
+                progress.setProgress(0);
+                progress.setCancelable(false);
+                progress.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                progress.show();
+
+
+                final int totalProgressTime = 100;
+                final Thread t = new Thread() {
+                    @Override
+                    public void run() {
+                        int jumpTime = 0;
+
+                        while(jumpTime < totalProgressTime) {
+                            try {
+                                sleep(200);
+                                jumpTime += 5;
+                                progress.setProgress(jumpTime);
+                            }
+                            catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                };
+                t.start();
+
             }
         });
     }
