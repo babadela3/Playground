@@ -3,6 +3,7 @@ package com.example.gabriela.buttonsanddialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -25,9 +26,29 @@ public class DialogsActivity extends Activity {
     private Button calinDialogButton;
     private Button teoDialogButton;
     private Button mihaiDialogButton;
+    private Button gabiDialogButton;
+    private Button raresDialogButton;
+    private Button catalinDialogButton;
 
     private int progressStatus = 0;
     private Handler handler = new Handler();
+
+    public void raresDialog() {
+
+        final CharSequence[] options = {
+                "Mancare", "Bautura", "Ambele :)"
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Alege");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                // Do something with the selection
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +56,12 @@ public class DialogsActivity extends Activity {
         setContentView(R.layout.dialogs);
 
         ralucaDialogButton = (Button) findViewById(R.id.ralucadialog_button);
+        raresDialogButton = (Button) findViewById(R.id.raresdialog_button);
         calinDialogButton = (Button) findViewById(R.id.calindialog_button);
         mihaiDialogButton = (Button) findViewById(R.id.mihaidialog_button);
         teoDialogButton = (Button) findViewById(R.id.teodialog_button);
+        gabiDialogButton = (Button) findViewById(R.id.gabidialog_button);
+        catalinDialogButton = (Button) findViewById(R.id.catalindialog_button);
         setUpHandlers();
     }
 
@@ -65,6 +89,13 @@ public class DialogsActivity extends Activity {
                         });
                 dialog.setIcon(android.R.drawable.ic_dialog_alert);
                 dialog.show();
+            }
+        });
+
+        raresDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                raresDialog();
             }
         });
 
@@ -201,6 +232,63 @@ public class DialogsActivity extends Activity {
                     }
                 });
                 dialog.show();
+            }
+        });
+
+        gabiDialogButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progress = new ProgressDialog(DialogsActivity.this);
+                progress.setTitle("Super cool title");
+                progress.setMessage("Loading...");
+                progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progress.setIndeterminate(true);
+                progress.setProgress(0);
+                progress.setCancelable(false);
+                progress.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                progress.show();
+
+
+                final int totalProgressTime = 100;
+                final Thread t = new Thread() {
+                    @Override
+                    public void run() {
+                        int jumpTime = 0;
+
+                        while(jumpTime < totalProgressTime) {
+                            try {
+                                sleep(200);
+                                jumpTime += 5;
+                                progress.setProgress(jumpTime);
+                            }
+                            catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                };
+                t.start();
+
+            }
+        });
+        catalinDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment dialog=new CatalinDialogFragment();
+
+                Bundle args = new Bundle();
+                args.putString("Score", "1200");
+                dialog.setArguments(args);
+
+                dialog.show(getFragmentManager(), "tag");
+
             }
         });
     }
