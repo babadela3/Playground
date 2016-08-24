@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/catalin_dialog_fragment_border"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/catalinDF_title"
+
+        android:text="NEW RECORD!"
+        android:textSize="40sp"
+        android:textColor="#000"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/catalinDF_score"
+
+        android:text="Score: "
+        android:textSize="30sp"
+        android:textColor="#000"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/catalinDF_title"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/catalinDF_nameTV"
+        android:text="Name:"
+        android:textSize="25sp"
+        android:textColor="#000"
+        
+
+        android:layout_above="@+id/catalinDF_discard"
+        android:layout_marginBottom="-50dp"
+        android:layout_alignLeft="@+id/catalinDF_discard"
+        android:layout_alignTop="@+id/catalinDF_nameET"
+        android:gravity="center"
+        
+        />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/catalinDF_nameET"
+
+        android:layout_toRightOf="@+id/catalinDF_nameTV"
+        android:layout_above="@+id/catalinDF_discard"
+        android:layout_marginBottom="-50dp"
+        android:layout_alignRight="@+id/catalinDF_save"
+
+        />
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Discard"
+        android:id="@+id/catalinDF_discard"
+        android:layout_below="@+id/catalinDF_score"
+        android:layout_alignLeft="@+id/catalinDF_title"
+        android:layout_alignStart="@+id/catalinDF_title"
+        android:layout_marginTop="77dp"
+        android:layout_marginBottom="50dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/catalinDF_save"
+        android:layout_alignTop="@+id/catalinDF_discard"
+        android:layout_alignRight="@+id/catalinDF_title"
+        android:layout_alignEnd="@+id/catalinDF_title" />
+    
+    
+</RelativeLayout>

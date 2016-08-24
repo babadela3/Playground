@@ -3,6 +3,7 @@ package com.example.gabriela.buttonsanddialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -27,6 +28,8 @@ public class DialogsActivity extends Activity {
     private Button mihaiDialogButton;
     private Button gabiDialogButton;
     private Button raresDialogButton;
+    private Button catalinDialogButton;
+
 
     private int progressStatus = 0;
     private Handler handler = new Handler();
@@ -59,6 +62,8 @@ public class DialogsActivity extends Activity {
         mihaiDialogButton = (Button) findViewById(R.id.mihaidialog_button);
         teoDialogButton = (Button) findViewById(R.id.teodialog_button);
         gabiDialogButton = (Button) findViewById(R.id.gabidialog_button);
+        catalinDialogButton = (Button) findViewById(R.id.catalindialog_button);
+
         setUpHandlers();
     }
 
@@ -272,6 +277,20 @@ public class DialogsActivity extends Activity {
                     }
                 };
                 t.start();
+
+            }
+        });
+
+        catalinDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment dialog=new CatalinDialogFragment();
+
+                Bundle args = new Bundle();
+                args.putString("Score", "1200");
+                dialog.setArguments(args);
+
+                dialog.show(getFragmentManager(), "tag");
 
             }
         });
