@@ -26,11 +26,12 @@ public class DialogsActivity extends Activity {
     private Button teoDialogButton;
     private Button mihaiDialogButton;
     private Button gabiDialogButton;
+    private Button raresDialogButton;
 
     private int progressStatus = 0;
     private Handler handler = new Handler();
 
-    public void raresDialog(View view) {
+    public void raresDialog() {
 
         final CharSequence[] options = {
                 "Mancare", "Bautura", "Ambele :)"
@@ -85,6 +86,13 @@ public class DialogsActivity extends Activity {
                         });
                 dialog.setIcon(android.R.drawable.ic_dialog_alert);
                 dialog.show();
+            }
+        });
+
+        raresDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                raresDialog();
             }
         });
 
