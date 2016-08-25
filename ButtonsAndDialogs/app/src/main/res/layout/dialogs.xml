@@ -42,8 +42,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="carla's dialog"
-        android:id="@+id/carladialog_button"
+        android:text="karla's dialog"
+        android:id="@+id/karladialog_button"
         android:layout_below="@+id/calindialog_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text="gabi's dialog"
         android:id="@+id/gabidialog_button"
-        android:layout_below="@+id/carladialog_button"
+        android:layout_below="@+id/karladialog_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/ralucadialog_button"
@@ -91,6 +91,7 @@
         android:layout_below="@+id/catalindialog_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:onClick="raresDialog"
         android:layout_alignEnd="@+id/ralucadialog_button"
         android:layout_alignRight="@+id/ralucadialog_button"/>
 
